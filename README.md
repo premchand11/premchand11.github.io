@@ -40,7 +40,6 @@ In the repo settings, set **Pages → Source** to **GitHub Actions**.
 
 ## Notes
 
-- `sarthak.wtf-2/` is a design reference only. It is not part of the build.
-- Color theme persists in `localStorage["premchand.theme"]` (`light` / `dark`).
+- Color theme defaults to **dark**; choice persists in `localStorage["premchand.theme"]` (`light` / `dark`).
 - Creative / engineer mode persists in `localStorage["premchand.mode"]`.
 - Edit company names and dates in `content/experience.json` when you have them.

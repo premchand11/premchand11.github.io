@@ -14,11 +14,12 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    const next: Theme = stored === "dark" ? "dark" : "light";
+    // Default dark; only use light if the user explicitly chose it.
+    const next: Theme = stored === "light" ? "light" : "dark";
     setTheme(next);
     applyTheme(next);
   }, []);

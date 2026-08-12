@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "NIT Warangal. Building small, useful systems — Go pipelines, LLM tools, and the occasional web app.",
 };
 
-const THEME_SCRIPT = `try{var t=localStorage.getItem("premchand.theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"default")}catch(e){}`;
+const THEME_SCRIPT = `try{var t=localStorage.getItem("premchand.theme");document.documentElement.setAttribute("data-theme",t==="light"?"default":"dark")}catch(e){}`;
 
 export default function RootLayout({
   children,
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="default">
+    <html lang="en" data-theme="dark">
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
