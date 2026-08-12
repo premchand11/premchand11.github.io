@@ -1,0 +1,26 @@
+[
+  {
+    "role": "Senior Software Engineer",
+    "company": "Infinity Learn",
+    "href": null,
+    "date": "Jul 2026 – Present",
+    "details": [ 
+      "Built a queue-based event platform on AWS for reliable, priority-based background processing.", "Worked on event auditing, retries, failure recovery, and systems handling 15K+ events every week." 
+    ]
+  },
+  {
+    "role": "Software Engineer",
+    "company": "Infinity Learn",
+    "href": null,
+    "date": "Jul 2025 – Jul 2026",
+    "details": [ "Built backend services and a serverless BFF serving 20K+ weekly users across 25+ APIs.", "Worked on caching, authentication, package visibility, CSV workflows, and large-file uploads." ]
+  },
+  {
+    "role": "Software Engineering Intern",
+    "company": "Infinity Learn",
+    "href": null,
+    "date": "Jan 2025 – Jul 2025",
+    "details": [ 
+      "Built a distributed file-processing system using FastAPI, Celery, SQS, and S3.", "Improved processing throughput 4× through chunk-based parallel execution." ]
+  }
+]

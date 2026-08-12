@@ -1,0 +1,11 @@
+{
+  "always": [
+    { "label": "github", "href": "https://github.com/premchand11" },
+    { "label": "linkedin", "href": "https://www.linkedin.com/in/premchand-panku-388132229/" }
+  ],
+  "creative": [
+    { "label": "substack", "href": "https://substack.com/@premchand11" },
+    { "label": "behance", "href": "https://www.behance.net/premchand11" }
+  ],
+  "email": "pankupremchand@gmail.com"
+}

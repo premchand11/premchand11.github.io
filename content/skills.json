@@ -1,0 +1,18 @@
+[
+  {
+    "group": "languages",
+    "items": ["TypeScript", "JavaScript", "Go", "Python", "C++", "SQL"]
+  },
+  {
+    "group": "web",
+    "items": ["React", "Next.js", "Node.js", "Tailwind CSS", "REST", "PostgreSQL"]
+  },
+  {
+    "group": "systems & ml",
+    "items": ["concurrency", "SFTP pipelines", "LLM inference", "FastAPI"]
+  },
+  {
+    "group": "tools",
+    "items": ["Git", "Docker", "Linux", "Vercel"]
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "title": "SocialOrbit",
+    "blurb": "a social graph you can actually explore",
+    "site": "https://social-orbit-one.vercel.app",
+    "source": "https://github.com/premchand11/SocialOrbit",
+    "details": [
+      "Interactive social-graph explorer in TypeScript.",
+      "Mapped relationships and made exploration feel lightweight.",
+      "Deployed as a live web app."
+    ]
+  },
+  {
+    "title": "Namewave",
+    "blurb": "names, generated",
+    "site": "https://namewave.vercel.app",
+    "source": "https://github.com/premchand11/namewave",
+    "details": [
+      "Name generator with a clean, fast UI.",
+      "Focused on simple interactions and quick results.",
+      "Shipped on Vercel."
+    ]
+  },
+  {
+    "title": "Ai-chat",
+    "blurb": "chat with a model",
+    "site": "https://ai-chat-pi-nine.vercel.app",
+    "source": "https://github.com/premchand11/Ai-chat",
+    "details": [
+      "Chat interface backed by an LLM.",
+      "Python-side wiring plus a usable frontend.",
+      "Explored streaming responses and prompt flow."
+    ]
+  },
+  {
+    "title": "Tasker",
+    "blurb": "tasks without the ceremony",
+    "site": null,
+    "source": "https://github.com/premchand11/Tasker",
+    "details": [
+      "Full-stack task app in TypeScript.",
+      "CRUD flows without bloated ceremony.",
+      "Practice ground for app structure and auth-ish patterns."
+    ]
+  },
+  {
+    "title": "sftp-pipeline",
+    "blurb": "concurrent SFTP processing in Go",
+    "site": null,
+    "source": "https://github.com/premchand11/sftp-pipeline",
+    "details": [
+      "High-performance concurrent SFTP file processing in Go.",
+      "Worker pools, connection pooling, streaming vs read-all benchmarks.",
+      "Built to reason about throughput and backpressure."
+    ]
+  },
+  {
+    "title": "llm-inference-engine",
+    "blurb": "a small inference engine",
+    "site": null,
+    "source": "https://github.com/premchand11/llm-inference-engine",
+    "details": [
+      "Small Python inference engine for running models locally-ish.",
+      "Focused on the plumbing around loading and serving.",
+      "Learning vehicle for LLM systems internals."
+    ]
+  },
+  {
+    "title": "localdrop",
+    "blurb": "drop files on the LAN",
+    "site": null,
+    "source": "https://github.com/premchand11/localdrop",
+    "details": [
+      "LAN file drop utility in Go.",
+      "Share files on the local network without cloud round-trips.",
+      "Minimal CLI-shaped tool for a real everyday need."
+    ]
+  }
+]

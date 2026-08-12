@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap");
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "SF Pro Rounded", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-handwritten: "Caveat", cursive;
+}
+
+:root,
+[data-theme="default"] {
+  --ink-fg: #18181b;
+  --ink-mid: #52525b;
+  --ink-soft: #71717a;
+  --bg-base: #ffffff;
+  --color-line: #e4e4e7;
+  --hover-bg: rgba(24, 24, 27, 0.04);
+  --accent: #0f766e;
+  --accent-soft: rgba(15, 118, 110, 0.12);
+  --graph-0: rgba(212, 212, 216, 0.8);
+  --graph-1: #86efac;
+  --graph-2: #22c55e;
+  --graph-3: #16a34a;
+  --graph-4: #15803d;
+  --tooltip-bg: #18181b;
+  --tooltip-fg: #ffffff;
+  --tooltip-muted: #a1a1aa;
+  --live: #059669;
+}
+
+[data-theme="paper"] {
+  --ink-fg: #1c1b1f;
+  --ink-mid: #5c574e;
+  --ink-soft: #8a8478;
+  --bg-base: #faf9f6;
+  --color-line: #e6e1d6;
+  --hover-bg: rgba(28, 27, 31, 0.05);
+  --accent: #0f766e;
+  --accent-soft: rgba(15, 118, 110, 0.12);
+  --graph-0: rgba(214, 208, 196, 0.85);
+  --graph-1: #86efac;
+  --graph-2: #22c55e;
+  --graph-3: #16a34a;
+  --graph-4: #15803d;
+  --tooltip-bg: #1c1b1f;
+  --tooltip-fg: #faf9f6;
+  --tooltip-muted: #c4bfb4;
+  --live: #047857;
+}
+
+[data-theme="dark"] {
+  --ink-fg: #e8e6df;
+  --ink-mid: #b8bccc;
+  --ink-soft: #8a90a3;
+  --bg-base: #0c0c0e;
+  --color-line: #27272a;
+  --hover-bg: rgba(255, 255, 255, 0.06);
+  --accent: #5eead4;
+  --accent-soft: rgba(94, 234, 212, 0.14);
+  --graph-0: rgba(63, 63, 70, 0.9);
+  --graph-1: #4ade80;
+  --graph-2: #22c55e;
+  --graph-3: #16a34a;
+  --graph-4: #166534;
+  --tooltip-bg: #fafafa;
+  --tooltip-fg: #18181b;
+  --tooltip-muted: #52525b;
+  --live: #34d399;
+}
+
+html,
+body {
+  background-color: var(--bg-base);
+  color: var(--ink-fg);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+.font-handwritten {
+  font-family: var(--font-handwritten), cursive;
+}
+
+.tab-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes fade-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    opacity: 0;
+    animation: fade-slide-up 0.25s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+  }
+}
+
+@media (hover: hover) {
+  .focus-list > li {
+    transition:
+      filter 0.2s ease,
+      opacity 0.2s ease,
+      background-color 0.15s ease;
+  }
+  .focus-list:hover > li:not(:hover) {
+    filter: blur(2px);
+    opacity: 0.55;
+  }
+}
