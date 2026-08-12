@@ -1,5 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap");
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Caveat";
+  src: url("/fonts/Caveat.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme inline {
   --font-sans: "SF Pro Rounded", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -89,7 +96,9 @@ h3 {
 }
 
 .font-handwritten {
-  font-family: var(--font-handwritten), cursive;
+  font-family: "Caveat", cursive !important;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .tab-nums {
