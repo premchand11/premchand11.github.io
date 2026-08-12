@@ -1,18 +1,58 @@
 [
   {
     "group": "languages",
-    "items": ["TypeScript", "JavaScript", "Go", "Python", "C++", "SQL"]
+    "items": [
+      "Go",
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "C++",
+      "SQL"
+    ]
   },
   {
-    "group": "web",
-    "items": ["React", "Next.js", "Node.js", "Tailwind CSS", "REST", "PostgreSQL"]
+    "group": "backend & systems",
+    "items": [
+      "FastAPI",
+      "NestJS",
+      "Node.js",
+      "Microservices",
+      "Celery",
+      "Distributed Systems",
+      "Concurrency"
+    ]
   },
   {
-    "group": "systems & ml",
-    "items": ["concurrency", "SFTP pipelines", "LLM inference", "FastAPI"]
+    "group": "databases",
+    "items": [
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "DynamoDB"
+    ]
   },
   {
-    "group": "tools",
-    "items": ["Git", "Docker", "Linux", "Vercel"]
+    "group": "cloud & infrastructure",
+    "items": [
+      "AWS",
+      "Docker",
+      "Serverless Framework",
+      "CI/CD",
+      "New Relic"
+    ]
+  },
+  {
+    "group": "AI/ML",
+    "items": [
+      "PyTorch",
+      "Hugging Face Transformers",
+      "LangChain",
+      "TensorFlow",
+      "Scikit-learn",
+      "LLM Inference",
+      "Quantization",
+      "RAG",
+      "Fine-Tuning"
+    ]
   }
 ]

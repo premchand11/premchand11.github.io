@@ -1,79 +1,68 @@
 [
   {
-    "title": "SocialOrbit",
-    "blurb": "a social graph you can actually explore",
-    "site": "https://social-orbit-one.vercel.app",
-    "source": "https://github.com/premchand11/SocialOrbit",
-    "details": [
-      "Interactive social-graph explorer in TypeScript.",
-      "Mapped relationships and made exploration feel lightweight.",
-      "Deployed as a live web app."
-    ]
-  },
-  {
-    "title": "Namewave",
-    "blurb": "names, generated",
-    "site": "https://namewave.vercel.app",
-    "source": "https://github.com/premchand11/namewave",
-    "details": [
-      "Name generator with a clean, fast UI.",
-      "Focused on simple interactions and quick results.",
-      "Shipped on Vercel."
-    ]
-  },
-  {
-    "title": "Ai-chat",
-    "blurb": "chat with a model",
-    "site": "https://ai-chat-pi-nine.vercel.app",
-    "source": "https://github.com/premchand11/Ai-chat",
-    "details": [
-      "Chat interface backed by an LLM.",
-      "Python-side wiring plus a usable frontend.",
-      "Explored streaming responses and prompt flow."
-    ]
-  },
-  {
-    "title": "Tasker",
-    "blurb": "tasks without the ceremony",
+    "title": "llm-inference-engine",
+    "blurb": "going a little deeper than calling an API",
     "site": null,
-    "source": "https://github.com/premchand11/Tasker",
+    "source": "https://github.com/premchand11/llm-inference-engine",
     "details": [
-      "Full-stack task app in TypeScript.",
-      "CRUD flows without bloated ceremony.",
-      "Practice ground for app structure and auth-ish patterns."
+      "Built a small GPT-2 inference engine in Python using PyTorch and Transformers.",
+      "Experimented with KV-cache inference, quantization, and speculative decoding.",
+      "Built benchmarks around throughput, memory usage, and output correctness."
     ]
   },
   {
     "title": "sftp-pipeline",
-    "blurb": "concurrent SFTP processing in Go",
+    "blurb": "making SFTP considerably less boring",
     "site": null,
     "source": "https://github.com/premchand11/sftp-pipeline",
     "details": [
-      "High-performance concurrent SFTP file processing in Go.",
-      "Worker pools, connection pooling, streaming vs read-all benchmarks.",
-      "Built to reason about throughput and backpressure."
+      "Concurrent SFTP ingestion pipeline written in Go.",
+      "Uses worker pools, connection pooling, and retries with exponential backoff.",
+      "Benchmarked streaming and in-memory processing to understand the trade-offs between throughput and memory."
     ]
   },
   {
-    "title": "llm-inference-engine",
-    "blurb": "a small inference engine",
-    "site": null,
-    "source": "https://github.com/premchand11/llm-inference-engine",
+    "title": "SocialOrbit",
+    "blurb": "a social graph you can actually wander through",
+    "site": "https://social-orbit-one.vercel.app",
+    "source": "https://github.com/premchand11/SocialOrbit",
     "details": [
-      "Small Python inference engine for running models locally-ish.",
-      "Focused on the plumbing around loading and serving.",
-      "Learning vehicle for LLM systems internals."
+      "Built an interactive social-graph explorer in TypeScript.",
+      "Turns relationships and connections into something you can actually explore.",
+      "Built and shipped as a live web app."
     ]
   },
   {
-    "title": "localdrop",
-    "blurb": "drop files on the LAN",
+    "title": "Namewave",
+    "blurb": "stuck on a name? let the machine overthink it",
+    "site": "https://namewave.vercel.app",
+    "source": "https://github.com/premchand11/namewave",
+    "details": [
+      "A simple name generator with a fast, minimal interface.",
+      "Built around quick interactions and getting useful results without the clutter.",
+      "Designed and shipped as a small Vercel project."
+    ]
+  },
+  {
+    "title": "Tasker",
+    "blurb": "a todo app, because apparently I needed to build one",
+    "site": null,
+    "source": "https://github.com/premchand11/Tasker",
+    "details": [
+      "Full-stack task manager built with TypeScript.",
+      "Covers the usual CRUD and application flows without turning a todo list into a framework demo.",
+      "Built to get comfortable with structuring a complete application end to end."
+    ]
+  },
+  {
+    "title": "LocalDrop",
+    "blurb": "send files across the room, minus the cloud",
     "site": null,
     "source": "https://github.com/premchand11/localdrop",
     "details": [
-      "LAN file drop utility in Go.",
-      "Share files on the local network without cloud round-trips.",
-      "Minimal CLI-shaped tool for a real everyday need."
+      "A lightweight LAN file-sharing utility written in Go.",
+      "Lets you move files directly between devices on the same network.",
+      "Started as a small practical tool and became an excuse to learn more about networking and Go."
     ]
   }
 ]

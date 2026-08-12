@@ -253,19 +253,17 @@ export function HomeView({
               <SectionLabel>things i know</SectionLabel>
               <ul className="focus-list flex flex-col">
                 {skills.map((group) => (
-                  <SimpleRow
+                  <li
                     key={group.group}
-                    left={
-                      <span className="text-[color:var(--ink-soft)]">
-                        {group.group}
-                      </span>
-                    }
-                    right={
-                      <span className="text-right text-[color:var(--ink-fg)] max-w-[18rem]">
-                        {group.items.join(", ")}
-                      </span>
-                    }
-                  />
+                    className="grid grid-cols-[minmax(7.5rem,10.5rem)_minmax(0,1fr)] gap-x-4 items-baseline py-1.5 px-2 -mx-2 text-sm rounded-md hover:bg-(--hover-bg) transition-colors duration-150"
+                  >
+                    <span className="text-[color:var(--ink-soft)] lowercase shrink-0">
+                      {group.group}
+                    </span>
+                    <span className="text-[color:var(--ink-fg)] leading-relaxed min-w-0">
+                      {group.items.join(", ")}
+                    </span>
+                  </li>
                 ))}
               </ul>
             </section>
