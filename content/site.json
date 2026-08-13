@@ -6,5 +6,6 @@
   ],
   "email": "pankupremchand@gmail.com",
   "resumeUrl": "https://drive.google.com/file/d/1C8d8Trso8xIQkh8CVhOtRKef6GmWRo-g/view?usp=drive_link",
-  "cta": "wanna chat? let's talk"
+  "cta": "wanna chat? let's talk",
+  "showActivity": false
 }

@@ -10,7 +10,7 @@ import writing from "@/content/writing.json";
 import creative from "@/content/creative.json";
 
 export default async function Home() {
-  const commits = await fetchCommits();
+  const commits = site.showActivity ? await fetchCommits() : null;
 
   return (
     <HomeView

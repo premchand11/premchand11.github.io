@@ -19,6 +19,7 @@ export type HomeViewProps = {
     email: string;
     resumeUrl: string;
     cta: string;
+    showActivity?: boolean;
   };
   socials: {
     always: { label: string; href: string }[];
@@ -60,11 +61,11 @@ export type HomeViewProps = {
     kind: string;
     details: string[];
   }[];
-  commits: {
+  commits?: {
     days: CommitDay[];
     source: CommitSource;
     username: string;
-  };
+  } | null;
 };
 
 export function HomeView({
@@ -381,14 +382,16 @@ export function HomeView({
           </section>
         )}
 
-        <div className="fade-in mt-12" style={{ animationDelay: "280ms" }}>
-          <SectionLabel>activity</SectionLabel>
-          <CommitGraph
-            days={commits.days}
-            source={commits.source}
-            username={commits.username}
-          />
-        </div>
+        {site.showActivity && commits && (
+          <div className="fade-in mt-12" style={{ animationDelay: "280ms" }}>
+            <SectionLabel>activity</SectionLabel>
+            <CommitGraph
+              days={commits.days}
+              source={commits.source}
+              username={commits.username}
+            />
+          </div>
+        )}
 
         {ctaHref && (
           <p
