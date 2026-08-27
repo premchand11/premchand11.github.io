@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { CommitGraph } from "@/components/home/CommitGraph";
 import { DetailRow } from "@/components/home/DetailRow";
 import { SectionLabel } from "@/components/home/SectionLabel";
-import { SimpleRow } from "@/components/home/SimpleRow";
 import { ThemeToggle } from "@/components/home/ThemeToggle";
+import { VisualScroll, type VisualItem } from "@/components/home/VisualScroll";
 import type { CommitDay, CommitSource } from "@/lib/commits";
 
 const linkClass =
@@ -15,7 +15,9 @@ export type HomeViewProps = {
   site: {
     name: string;
     tagline: string;
+    creativeTagline?: string;
     bio: string[];
+    creativeBio?: string[];
     email: string;
     resumeUrl: string;
     cta: string;
@@ -54,13 +56,14 @@ export type HomeViewProps = {
     year: string;
     sneakPeek: string;
   }[];
-  creative: {
+  creativeWriting: {
     title: string;
     blurb: string;
     href: string | null;
-    kind: string;
-    details: string[];
+    year: string;
+    sneakPeek: string;
   }[];
+  creativeVisual: VisualItem[];
   commits?: {
     days: CommitDay[];
     source: CommitSource;
@@ -76,7 +79,8 @@ export function HomeView({
   education,
   skills,
   writing,
-  creative,
+  creativeWriting,
+  creativeVisual,
   commits,
 }: HomeViewProps) {
   const [mode, setMode] = useMode();
@@ -92,6 +96,13 @@ export function HomeView({
     ...(site.resumeUrl ? [{ label: "resume", href: site.resumeUrl }] : []),
     ...(mode === "creative" ? socials.creative : []),
   ];
+
+  const tagline =
+    mode === "creative"
+      ? (site.creativeTagline ?? site.tagline)
+      : site.tagline;
+  const bio =
+    mode === "creative" ? (site.creativeBio ?? site.bio) : site.bio;
 
   return (
     <main className="relative min-h-screen text-[color:var(--ink-fg)]">
@@ -122,42 +133,35 @@ export function HomeView({
           </div>
         </div>
 
-        <p
-          className="fade-in mt-2 text-sm text-[color:var(--ink-soft)]"
-          style={{ animationDelay: "20ms" }}
-        >
-          {site.tagline}
-        </p>
+        <div key={mode} className="mode-intro">
+          <p className="fade-in mt-2 text-sm text-[color:var(--ink-soft)]">
+            {tagline}
+          </p>
 
-        <div
-          className="fade-in mt-4 flex flex-col gap-3 text-sm leading-relaxed text-[color:var(--ink-mid)]"
-          style={{ animationDelay: "40ms" }}
-        >
-          {site.bio.map((paragraph) => (
-            <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-          ))}
+          <div className="fade-in mt-4 flex flex-col gap-3 text-sm leading-relaxed text-[color:var(--ink-mid)]">
+            {bio.map((paragraph) => (
+              <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+            ))}
+          </div>
+
+          <p className="fade-in mt-4 flex flex-wrap gap-x-3 gap-y-1 text-sm text-[color:var(--ink-mid)]">
+            {headerLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={
+                  link.href.startsWith("mailto:")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
+                className={linkClass}
+              >
+                {link.label}
+              </a>
+            ))}
+          </p>
         </div>
-
-        <p
-          className="fade-in mt-4 flex flex-wrap gap-x-3 gap-y-1 text-sm text-[color:var(--ink-mid)]"
-          style={{ animationDelay: "60ms" }}
-        >
-          {headerLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-              rel={
-                link.href.startsWith("mailto:")
-                  ? undefined
-                  : "noopener noreferrer"
-              }
-              className={linkClass}
-            >
-              {link.label}
-            </a>
-          ))}
-        </p>
 
         {mode === "engineer" ? (
           <>
@@ -336,50 +340,75 @@ export function HomeView({
             </section>
           </>
         ) : (
-          <section
-            className="fade-in mt-12"
-            style={{ animationDelay: "120ms" }}
-          >
-            <SectionLabel>creative</SectionLabel>
-            <p className="mb-4 text-sm leading-relaxed text-[color:var(--ink-mid)]">
-              Designs, sketches, and visual experiments. Hover for a peek —
-              click a row to open the work.
-            </p>
-            <ul className="focus-list flex flex-col">
-              {creative.map((item) => (
-                <DetailRow
-                  key={item.title}
-                  left={
-                    <span>
-                      <span className="text-[color:var(--ink-fg)]">
-                        {item.title}
-                      </span>
-                      <span className="text-[color:var(--ink-soft)]">
-                        {" "}
-                        · {item.blurb}
-                      </span>
-                    </span>
-                  }
-                  right={
-                    item.href ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={linkClass}
-                      >
-                        view
-                      </a>
-                    ) : (
-                      item.kind
-                    )
-                  }
-                  details={item.details}
-                  href={item.href}
-                />
-              ))}
-            </ul>
-          </section>
+          <>
+            <section
+              className="fade-in mt-12"
+              style={{ animationDelay: "120ms" }}
+            >
+              <SectionLabel>writing</SectionLabel>
+              <p className="mb-4 text-sm leading-relaxed text-[color:var(--ink-mid)]">
+                Substack notes on movies, views, and things worth remembering.
+                Hover for a peek click to read.
+              </p>
+              <ul className="focus-list flex flex-col">
+                {creativeWriting.map((item) => (
+                  <DetailRow
+                    key={item.title + item.year}
+                    left={
+                      item.href ? (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={linkClass}
+                        >
+                          {item.title}
+                          <span className="text-[color:var(--ink-soft)]">
+                            {" "}
+                            · {item.blurb}
+                          </span>
+                        </a>
+                      ) : (
+                        <span>
+                          <span className="text-[color:var(--ink-fg)]">
+                            {item.title}
+                          </span>
+                          <span className="text-[color:var(--ink-soft)]">
+                            {" "}
+                            · {item.blurb}
+                          </span>
+                        </span>
+                      )
+                    }
+                    right={item.year}
+                    details={[item.sneakPeek]}
+                    variant="peek"
+                    href={item.href}
+                  />
+                ))}
+              </ul>
+            </section>
+
+            <section
+              className="fade-in mt-12"
+              style={{ animationDelay: "180ms" }}
+            >
+              <SectionLabel>visual work</SectionLabel>
+              <p className="mb-4 text-sm leading-relaxed text-[color:var(--ink-mid)]">
+                Quiz posters and design work from{" "}
+                <a
+                  href="https://www.behance.net/chandu007"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  Behance
+                </a>
+                . Scroll sideways click a card to open the project.
+              </p>
+              <VisualScroll items={creativeVisual} />
+            </section>
+          </>
         )}
 
         {site.showActivity && commits && (
@@ -417,19 +446,50 @@ export function HomeView({
   );
 }
 
+function readModeFromUrl(): "engineer" | "creative" | null {
+  if (typeof window === "undefined") return null;
+  if (window.location.hash === "#creative") return "creative";
+  if (window.location.hash === "#engineer") return "engineer";
+  return null;
+}
+
+function readInitialMode(): "engineer" | "creative" {
+  const fromHash = readModeFromUrl();
+  if (fromHash) return fromHash;
+  if (typeof window === "undefined") return "engineer";
+  const stored = localStorage.getItem("premchand.mode");
+  if (stored === "creative" || stored === "engineer") return stored;
+  return "engineer";
+}
+
 function useMode() {
-  const [mode, setMode] = useState<"engineer" | "creative">("engineer");
+  const [mode, setMode] = useState<"engineer" | "creative">(readInitialMode);
 
   useEffect(() => {
-    const stored = localStorage.getItem("premchand.mode");
-    if (stored === "creative" || stored === "engineer") {
-      setMode(stored);
+    if (!window.location.hash) {
+      history.replaceState(
+        null,
+        "",
+        mode === "creative" ? "#creative" : "#engineer",
+      );
     }
+
+    const onHashChange = () => {
+      const next = readModeFromUrl();
+      if (!next) return;
+      setMode(next);
+      localStorage.setItem("premchand.mode", next);
+    };
+
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- sync hash once on mount
   }, []);
 
   const update = (next: "engineer" | "creative") => {
     setMode(next);
     localStorage.setItem("premchand.mode", next);
+    history.replaceState(null, "", next === "creative" ? "#creative" : "#engineer");
   };
 
   return [mode, update] as const;

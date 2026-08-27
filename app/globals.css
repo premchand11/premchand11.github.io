@@ -127,6 +127,26 @@ h3 {
   .fade-in {
     opacity: 1;
   }
+  .mode-intro {
+    animation: none;
+  }
+}
+
+@keyframes mode-intro-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mode-intro {
+    animation: mode-intro-fade 0.15s ease-out;
+  }
 }
 
 @media (hover: hover) {
@@ -139,5 +159,32 @@ h3 {
   .focus-list:hover > li:not(:hover) {
     filter: blur(2px);
     opacity: 0.55;
+  }
+}
+
+.visual-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+.visual-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.visual-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.visual-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 999px;
+}
+
+@media (hover: hover) {
+  .visual-card {
+    transition: transform 0.2s ease;
+  }
+  .visual-card:hover {
+    transform: translateY(-2px);
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { applyThemeColor } from "@/lib/theme";
 
 const STORAGE_KEY = "premchand.theme";
 
@@ -11,6 +12,7 @@ function applyTheme(theme: Theme) {
     "data-theme",
     theme === "dark" ? "dark" : "default",
   );
+  applyThemeColor(theme);
 }
 
 export function ThemeToggle() {
@@ -18,7 +20,6 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    // Default dark; only use light if the user explicitly chose it.
     const next: Theme = stored === "light" ? "light" : "dark";
     setTheme(next);
     applyTheme(next);

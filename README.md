@@ -19,13 +19,14 @@ Edit JSON under `content/` — no JSX changes needed:
 
 | File | Purpose |
 |------|---------|
-| `content/site.json` | name, tagline, bio, about, email, resume, CTA |
+| `content/site.json` | name, tagline, bio, creative tagline/bio, email, resume, CTA, showActivity |
 | `content/socials.json` | always links (github / linkedin) + creative-only (substack / behance) + email |
 | `content/experience.json` | intern → engineer → senior |
 | `content/projects.json` | proof of work |
 | `content/skills.json` | tech by group |
-| `content/writing.json` | blog / notes |
-| `content/creative.json` | designs shown in creative mode |
+| `content/writing.json` | blog / notes (engineer side) |
+| `content/creative-writing.json` | Substack posts (creative side) |
+| `content/creative-visual.json` | posters, Behance, commissions — horizontal scroll |
 | `content/education.json` | school |
 
 Top-right controls: **dark/light** theme, and **creative →** to swap into the design side.

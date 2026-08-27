@@ -1,8 +1,13 @@
 {
   "name": "Premchand Panku",
   "tagline": "Senior Software Engineer · NIT Warangal",
+  "creativeTagline": "Commission work · notes · the personal side",
   "bio": [
-    "I like building things and then figuring out why they broke. Most of my time goes into backend systems, Go, Python, TypeScript, and lately a lot of curiosity around AI and how things work under the hood.", "Outside code, I like movies, music, good interfaces, and little creative experiments. I'm usually happiest when I'm learning something new or making something that didn't exist a few hours earlier."
+    "I build backend systems in Go, Python, and TypeScript mostly the unglamorous work of making things fast, reliable, and simple enough to ship.",
+    "Software engineer by day. Lately a lot of my curiosity has gone toward AI and the systems behind it, but I'm happiest when something I built is actually being used."
+  ],
+  "creativeBio": [
+    "I like simple, sleek work that isn't trying too hard. Nothing overcomplicated, but the kind that sticks. I also ramble about movies, views, and random things that felt worth remembering."
   ],
   "email": "pankupremchand@gmail.com",
   "resumeUrl": "https://drive.google.com/file/d/1C8d8Trso8xIQkh8CVhOtRKef6GmWRo-g/view?usp=drive_link",
